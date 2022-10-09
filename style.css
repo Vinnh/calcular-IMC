@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    background-color: #0b0b0c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    color: #0a835d;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox {
+    position: relative;
+    width: 250px;
+    margin-bottom: 40px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: #0b0b0c;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    transition: .5s;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.inputBox input:valid ~ span, .inputBox input:focus ~ span {
+    color: #0a835d;
+    transform: translateX(10px) translateY(-7px);
+    font-size: .65em;
+    padding: 0 10px;
+    background: #0b0b0c;
+    border-left: 1px solid #0a835d;
+    border-right: 1px solid #0a835d;
+    letter-spacing: .2em;
+}
+
+.inputBox input:valid, .inputBox input:focus {
+    border: 1px solid #0a835d;
+}
+
+.btn button {
+    width: 250px;
+    padding: 10px;
+    background-color: #0a835d;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.btn button:hover {
+    background-color: #096548;
+}
+
+span {
+    color: #fff;
+    font-size: 100px;
+    font-weight: 700;
+}
