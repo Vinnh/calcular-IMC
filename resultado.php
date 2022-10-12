@@ -3,16 +3,33 @@
   $altura = $_POST['altura'];
   $peso = $_POST['peso'];
 
-  $calc = $peso/(pow($altura, 2));
+  $calc = number_format($peso/(pow($altura, 2)), 1);
 
   $clas = 'teste';
 
-
-  switch ($calc) {
-    case '$calc >= 19 || $calc <= 24':
-      $clas = 'Peso normal';
-      break;
+  if($calc < 19) {
+    $clas = 'Baixo Peso';
+  } else
+  
+  if($calc >= 19 && $calc <= 24) {
+    $clas = 'Peso Normal';
+  } else
+  
+  if($calc >= 25 && $calc <= 30) {
+    $clas = 'Sobrepeso';
+  } else
+  
+  if($calc >= 31 && $calc <= 35) {
+    $clas = 'Obesidade I';
+  } else
+  
+  if($calc >= 36 && $calc <= 40) {
+    $clas = 'Obesidade II';
+  } else {
+    $clas = 'Obesidade III';
   }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +48,11 @@
 
     <span><?php echo $calc ?></span>
     
-    <h1>De acordo com seu IMC, você possui</h1>
-    <span><?php echo $clas?></span>
+    <h1>De acordo com ele, você possui</h1>
+    <span class="clas"><?php echo $clas?></span>
+
+    <div class="btn">
+        <a href="index.php">Voltar</a>
+    </div>
 </body>
 </html>
